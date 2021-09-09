@@ -55,6 +55,8 @@ function execute() {
         // after displayed the result clearing the previous string
         str = ''
         return;
+    } else if (str === '') {
+        return;
     }
     ans = String(eval(str));
     result.innerText = ans;
