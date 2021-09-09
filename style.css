@@ -131,6 +131,7 @@ body {
 .operator {
     background: var(--purple-color-dark);
     color: var(--purple-color-light);
+    font-weight: 1000;
 }
 
 .equal {
