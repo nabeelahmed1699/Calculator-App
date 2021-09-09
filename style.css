@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors */
+    --background-color: #3c4041;
+    --text-color: #e4e7e8;
+    --seconday-color-alt: #bbc3c9;
+    --calc-color: #51555f;
+    --second-color: #b6b1c7;
+    --purple-color-light: #5c0eec;
+    --purple-color-dark: hsl(263, 95%, 16%);
+    --orange-color-light: #e37d2f;
+    --orange-color-off: #754623;
+    /* Typography */
+    --font-family: 'Roboto', sans-serif;
+    --biggest-font-size: 5rem;
+    --biger-font-size: 3.5rem;
+    --big-font-size: 2.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.15rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+    --text-line-height: 2rem;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 7.5rem;
+        --biger-font-size: 4.5rem;
+        --big-font-size: 4rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+        --smaller-font-size: 0.813rem;
+    }
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+.title {
+    text-align: center;
+    font-size: 8vmin;
+    margin-top: 1.2rem;
+    margin-bottom: -2rem;
+}
+
+.container {
+    max-width: 25%;
+    min-width: 350px;
+    margin: 3rem auto;
+    margin-bottom: 6rem;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    /* background: rgb(81, 85, 95);
+    background: linear-gradient( 180deg, rgba(81, 85, 95, 1) 32%, hsl(192, 4%, 27%) 71%); */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 10px 10px 40px #3c4041;
+}
+
+.result-container {
+    margin-top: 10px;
+    min-height: 25vh;
+    text-align: right;
+}
+
+.history {
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.result {
+    margin-top: 10px;
+    font-size: 2.2rem;
+    transition: 0.3s;
+}
+
+.buttons-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 45px;
+    padding: 10px 12px;
+    font-size: 1.5rem;
+    margin: 3px 5px;
+    cursor: pointer;
+    color: var(--second-color);
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2), inset 0 4px 4px rgba(255, 255, 255, 0.2);
+    transition: 0.2;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+.symbol {
+    background: var(--orange-color-off);
+    color: var(--orange-color-light);
+}
+
+.symbol:first-child {
+    background: var(--orange-color-light);
+    color: var(--text-color);
+}
+
+.operator {
+    background: var(--purple-color-dark);
+    color: var(--purple-color-light);
+}
+
+.equal {
+    background: var(--purple-color-light);
+}
+
+.number {
+    background: var(--background-color);
+}
+
+.share-buttons {
+    min-height: 300px;
+    margin: 1.2rem auto;
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 10px 10px 40px 10px rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+}
+
+@media screen and (max-width: 600px) {
+    .share-buttons {
+        min-height: unset;
+        width: 70%;
+        top: unset;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        justify-content: space-between;
+        background: var(--primary-color);
+    }
+}
+
+.social-icon {
+    color: var(--text-color);
+    font-size: var(--h2-font-size);
+    transition: 500ms;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.facebook {
+    color: #1877f2;
+}
+
+.twitter {
+    color: #1da1f2;
+}
+
+.linkedin {
+    color: #0077b5;
+}
+
+.whatsapp {
+    color: #25d366;
+}
+
+.pinterest {
+    color: #e60023;
+}
+
+footer {
+    text-align: center;
+}
+
+.git-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-4px, 3.2px);
+    padding: 8px 20px;
+    box-shadow: 10px 10px 40px 10px rgba(0, 0, 0, 0.5);
+    border: 0;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.git-btn:hover {
+    background: var(--second-color);
+}
