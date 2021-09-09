@@ -13,20 +13,28 @@ const reload = document.querySelector('.reload-quote')
 
 
 btns.forEach(btn => btn.addEventListener('click', calc));
-
+// if the user press equal btn
 equalBtn.addEventListener('click', execute);
 
 var str = ''
 
+// function to check which buttons is clicked and then store the responding string in the 'str' 
 function calc(event) {
+    // getting the value of the btn user clicked
     let value = event.currentTarget.innerText;
+
+    // check if the clicked btn is not = nor C neither backspace
     if (value !== '=' && value !== 'C' && value !== '') {
+
         str += value;
         history.innerText = str;
-    } else if (value === 'C' && value !== '') {
+    } else if (value === 'C') { //if the user press C btn which means to clear
+        // previous result goes to history 
+        history.innerText = result.innerText === 'result' ? 0 : result.innerText; //checking if the user clear the field in the first run then it plcae instead of result text
 
-        history.innerText = result.innerText;
+        // clear the str
         str = '';
+        // Also place zero in the result field
         result.innerText = 0;
         return;
     } else if (value === '') {
@@ -37,17 +45,20 @@ function calc(event) {
 
 }
 
+// function to evaluate the operation
 function execute() {
     let ans = '';
-    if (str[0] === '√') {
+    if (str[0] === '√') { //checking if the str contain sqr then calculating the sqr
         ans = str.substring(1);
         ans = String(Math.sqrt(ans));
         result.innerText = ans;
+        // after displayed the result clearing the previous string
         str = ''
         return;
     }
     ans = String(eval(str));
     result.innerText = ans;
+    // after displayed the result clearing the previous string
     str = ''
 
 }
